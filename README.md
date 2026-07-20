@@ -4,11 +4,13 @@ ScreenTextClip 是一个极简的 macOS 菜单栏屏幕取词工具。
 
 按下 `⌃⌘S`，框选屏幕上的文字，原文会自动复制到剪贴板，同时在选区旁显示本地翻译结果。
 
-## 下载
+## 下载安装包
 
-[下载最新版本](https://github.com/jmwang028/ScreenTextClip-Releases/releases/latest)
+### [点击这里下载 ScreenTextClip-0.2.0.dmg](https://github.com/jmwang028/ScreenTextClip-Releases/releases/download/v0.2.0/ScreenTextClip-0.2.0.dmg)
 
-当前版本：`0.2.0`
+下载后得到的 `ScreenTextClip-0.2.0.dmg` 就是 macOS 安装包。
+
+不要点击 GitHub 页面里的绿色 `Code`，也不要下载 `Source code (zip)` 或 `Source code (tar.gz)`，这些都不是安装包。
 
 安装包同时支持 Apple Silicon 和 Intel Mac。
 
@@ -37,7 +39,7 @@ ScreenTextClip 是一个极简的 macOS 菜单栏屏幕取词工具。
 
 ## 安装
 
-1. 从 Releases 下载 `ScreenTextClip-0.2.0.dmg`。
+1. 点击上方链接下载 `ScreenTextClip-0.2.0.dmg`。
 2. 打开 DMG，将 `ScreenTextClip.app` 拖入“应用程序”。
 3. 第一次双击启动时，macOS 会因为 App 未经过 Apple 公证而阻止打开。
 4. 打开“系统设置 > 隐私与安全性”，向下找到 ScreenTextClip，点击“仍要打开”。
