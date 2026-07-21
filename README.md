@@ -6,9 +6,9 @@ ScreenTextClip 是一个极简的 macOS 菜单栏屏幕取词工具。
 
 ## 下载安装包
 
-### [点击这里下载 ScreenTextClip-0.2.0.dmg](https://github.com/jmwang028/ScreenTextClip-Releases/releases/download/v0.2.0/ScreenTextClip-0.2.0.dmg)
+### [点击这里下载 ScreenTextClip-0.3.0.dmg](https://github.com/jmwang028/ScreenTextClip-Releases/releases/download/v0.3.0/ScreenTextClip-0.3.0.dmg)
 
-下载后得到的 `ScreenTextClip-0.2.0.dmg` 就是 macOS 安装包。
+下载后得到的 `ScreenTextClip-0.3.0.dmg` 就是 macOS 安装包。
 
 不要点击 GitHub 页面里的绿色 `Code`，也不要下载 `Source code (zip)` 或 `Source code (tar.gz)`，这些都不是安装包。
 
@@ -17,10 +17,13 @@ ScreenTextClip 是一个极简的 macOS 菜单栏屏幕取词工具。
 ## 功能
 
 - 多显示器框选 OCR
-- 支持英文、简体中文、日文和韩文识别
+- 英文、简体中文、日文和韩文默认可用
+- 可从菜单添加 Apple Vision 与 Apple Translation 共同支持的其他语言
 - OCR 原文自动复制到剪贴板
 - 使用 Apple Translation 进行本地翻译
-- 可选择翻译为简体中文、英文、日文或韩文
+- OCR 与翻译目标共用一份语言列表
+- 缺少受支持的语言包时，使用 macOS 原生下载窗口
+- 源语言和目标语言相同时直接显示原文，繁简中文在本机转换
 - 可拖动、可选择文字的翻译弹窗
 - 安静常驻菜单栏，不显示 Dock 图标
 - 不保存截图和历史记录，不调用第三方云端 API
@@ -39,7 +42,7 @@ ScreenTextClip 是一个极简的 macOS 菜单栏屏幕取词工具。
 
 ## 安装
 
-1. 点击上方链接下载 `ScreenTextClip-0.2.0.dmg`。
+1. 点击上方链接下载 `ScreenTextClip-0.3.0.dmg`。
 2. 打开 DMG，将 `ScreenTextClip.app` 拖入“应用程序”。
 3. 第一次双击启动时，macOS 会因为 App 未经过 Apple 公证而阻止打开。
 4. 打开“系统设置 > 隐私与安全性”，向下找到 ScreenTextClip，点击“仍要打开”。
@@ -53,6 +56,7 @@ ScreenTextClip 是一个极简的 macOS 菜单栏屏幕取词工具。
 - 按 `Control + Command + S`（`⌃⌘S`）开始框选。
 - 也可以左键点击菜单栏的 `STC`。
 - 右键或按住 Control 点击 `STC`，可以选择翻译目标语言或退出。
+- 在 `Translate To > Manage Languages…` 中添加或删除自定义语言。
 - 框选完成后，OCR 原文自动进入剪贴板；译文显示在选区旁边。
 
 ## 屏幕录制权限
