@@ -4,7 +4,7 @@
 [![macOS](https://img.shields.io/badge/macOS-14%2B-black)](#系统要求)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-ScreenTextClip 是一个原生、极简的 macOS 菜单栏屏幕取词工具。按下 `⌃⌘S`，框选屏幕上的文字，App 会在本机完成 OCR、自动复制原文，并在选区旁显示 Apple Translation 翻译结果。
+ScreenTextClip 是一个开源、原生、本地运行的 macOS 菜单栏屏幕取词和翻译工具。按下 `⌃⌘S`，框选屏幕上的文字，App 会在本机完成 OCR、自动复制原文，并在选区旁显示 Apple Translation 翻译结果。
 
 ```text
 框选屏幕文字 → Apple Vision OCR → 复制原文 → Apple Translation
