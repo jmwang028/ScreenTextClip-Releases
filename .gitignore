@@ -1,2 +1,8 @@
+build/
+DerivedData/
+dist/
 .DS_Store
 *.dmg
+*.xcuserstate
+xcuserdata/
+.playwright-cli/
