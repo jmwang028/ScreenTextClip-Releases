@@ -1,75 +1,75 @@
 # ScreenTextClip
 
 [![Release](https://img.shields.io/github/v/release/jmwang028/ScreenTextClip-Releases?label=release)](https://github.com/jmwang028/ScreenTextClip-Releases/releases/latest)
-[![macOS](https://img.shields.io/badge/macOS-14%2B-black)](#系统要求)
+[![macOS](https://img.shields.io/badge/macOS-14%2B-black)](#system-requirements)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-ScreenTextClip 是一个开源、原生、本地运行的 macOS 菜单栏屏幕取词和翻译工具。按下 `⌃⌘S`，框选屏幕上的文字，App 会在本机完成 OCR、自动复制原文，并在选区旁显示 Apple Translation 翻译结果。
+ScreenTextClip is an open-source, native, local-first macOS menu bar tool for screen OCR and translation. Press `⌃⌘S`, select text anywhere on your screen, and the app will recognize it locally, copy the original text, and display the Apple Translation result next to your selection.
 
 ```text
-框选屏幕文字 → Apple Vision OCR → 复制原文 → Apple Translation
+Select text on screen → Apple Vision OCR → Copy original text → Apple Translation
 ```
 
-- 不调用第三方 API
-- 不上传截图或文字
-- 无账号、无历史记录、无云同步
-- 无第三方依赖
+- No third-party APIs
+- No screenshot or text uploads
+- No accounts, history, or cloud sync
+- No third-party dependencies
 
-## 下载
+## Download
 
-### [下载 ScreenTextClip-0.5.0.dmg](https://github.com/jmwang028/ScreenTextClip-Releases/releases/download/v0.5.0/ScreenTextClip-0.5.0.dmg)
+### [Download ScreenTextClip-0.5.0.dmg](https://github.com/jmwang028/ScreenTextClip-Releases/releases/download/v0.5.0/ScreenTextClip-0.5.0.dmg)
 
-- [v0.5.0 发布说明](https://github.com/jmwang028/ScreenTextClip-Releases/releases/tag/v0.5.0)
-- [v0.5.0 源码快照](https://github.com/jmwang028/ScreenTextClip-Releases/releases/download/v0.5.0/ScreenTextClip-0.5.0-source.zip)
-- DMG SHA-256：`8e51511fde64899cbed55ffb0b4e98f7bc1f0cd5f3efda9ba2ed801642bdf01b`
+- [v0.5.0 release notes](https://github.com/jmwang028/ScreenTextClip-Releases/releases/tag/v0.5.0)
+- [v0.5.0 source snapshot](https://github.com/jmwang028/ScreenTextClip-Releases/releases/download/v0.5.0/ScreenTextClip-0.5.0-source.zip)
+- DMG SHA-256: `8e51511fde64899cbed55ffb0b4e98f7bc1f0cd5f3efda9ba2ed801642bdf01b`
 
-安装包同时支持 Apple Silicon 和 Intel Mac。当前公开安装包使用本地签名，未经 Apple Developer ID 签名和 notarization，首次启动时需要在“系统设置 > 隐私与安全性”中点击“仍要打开”。
+The installer is a Universal app for both Apple Silicon and Intel Macs. The current public build is locally signed but does not use an Apple Developer ID and is not notarized. On first launch, open **System Settings > Privacy & Security** and click **Open Anyway** if macOS blocks the app.
 
-## 功能
+## Features
 
-- 使用 ScreenCaptureKit 截取用户主动框选的屏幕区域。
-- 每个显示器一个选区遮罩，支持 Retina 和不同缩放比的多显示器。
-- Apple Vision 本地 OCR，支持英文、简体中文、繁体中文、日文、韩文和混合语言。
-- 清晰截图保持单次 OCR；仅在空结果或明显低置信度时重试一次。
-- 根据文字框高度、垂直重叠和位置整理阅读顺序，处理明显双栏内容。
-- 英文单词保留正常空格，中日韩文本避免多余空格。
-- OCR 原文自动复制到剪贴板。
-- macOS 15+ 使用 Apple Translation 本地翻译，混合语言优先由系统自动判断源语言。
-- 简繁中文之间使用 macOS 本地文字转换。
-- 可拖动、可选择文字的翻译弹窗。
-- 菜单中可切换 English / 简体中文界面、管理语言并设置登录时启动。
+- Captures only the screen region selected by the user with ScreenCaptureKit.
+- Uses one selection overlay per display and supports multi-display setups with Retina and different scaling factors.
+- Runs Apple Vision OCR locally for English, Simplified Chinese, Traditional Chinese, Japanese, Korean, and mixed-language content.
+- Keeps clear screenshots on the fast single-pass OCR path and retries once only for empty or clearly low-confidence results.
+- Organizes reading order using text-box height, vertical overlap, and position, including straightforward two-column content.
+- Preserves normal spaces between English words while avoiding unnecessary spaces in Chinese, Japanese, and Korean text.
+- Automatically copies the recognized original text to the clipboard.
+- Uses Apple Translation locally on macOS 15 or later and lets the system detect the source language for mixed-language text.
+- Converts between Simplified and Traditional Chinese locally with macOS text conversion.
+- Displays translation results in a movable popup with selectable text.
+- Provides English and Simplified Chinese interfaces, language management, and launch-at-login controls from the menu bar.
 
-## 系统要求
+## System Requirements
 
-- macOS 14 或更高版本：截图和 OCR。
-- macOS 15 或更高版本：Apple Translation 本地翻译。
-- 需要“屏幕录制”权限。
-- 翻译需要下载相应的 Apple 翻译语言包。
+- macOS 14 or later for screen capture and OCR.
+- macOS 15 or later for local Apple Translation.
+- Screen Recording permission.
+- The required Apple translation language packs.
 
-翻译语言包位置：
+Translation language packs can be managed in:
 
 ```text
-系统设置 > 通用 > 语言与地区 > 翻译语言
+System Settings > General > Language & Region > Translation Languages
 ```
 
-## 安装
+## Installation
 
-1. 下载并打开 `ScreenTextClip-0.5.0.dmg`。
-2. 将 `ScreenTextClip.app` 拖入“应用程序”。
-3. 首次打开如果被 macOS 拦截，进入“系统设置 > 隐私与安全性”，点击“仍要打开”。
-4. 允许 ScreenTextClip 使用屏幕录制权限，然后退出并重新打开 App。
+1. Download and open `ScreenTextClip-0.5.0.dmg`.
+2. Drag `ScreenTextClip.app` into the Applications folder.
+3. If macOS blocks the first launch, open **System Settings > Privacy & Security** and click **Open Anyway**.
+4. Allow ScreenTextClip to use Screen Recording, then quit and reopen the app.
 
-## 使用
+## Usage
 
-1. 启动 ScreenTextClip，App 会安静常驻菜单栏，不显示 Dock 图标。
-2. 按 `Control + Command + S`（`⌃⌘S`），或单击菜单栏 OCR 图标。
-3. 框选文字区域并松开鼠标。
-4. OCR 原文会自动进入剪贴板，译文显示在选区旁边。
-5. 右键或按住 Control 点击菜单栏图标，可管理语言、界面语言和登录启动。
+1. Launch ScreenTextClip. It runs quietly in the menu bar without a Dock icon.
+2. Press `Control + Command + S` (`⌃⌘S`) or click the OCR menu bar icon.
+3. Drag to select a text region and release the pointer.
+4. The recognized original text is copied to the clipboard, and the translation appears next to the selection.
+5. Right-click or Control-click the menu bar icon to manage languages, the interface language, and launch-at-login behavior.
 
-## 从源码构建
+## Build from Source
 
-需要 Xcode 16 或更高版本。项目没有 Swift Package 或第三方依赖。公开源码默认使用 ad-hoc 签名，不需要开发者证书。
+Xcode 16 or later is required. The project has no Swift Package or third-party dependencies. Public source builds use ad-hoc signing by default and do not require a developer certificate.
 
 ```bash
 git clone https://github.com/jmwang028/ScreenTextClip-Releases.git
@@ -77,14 +77,14 @@ cd ScreenTextClip-Releases
 ./script/build_and_run.sh --verify
 ```
 
-也可以直接打开 `ScreenTextClip.xcodeproj`。构建输出：
+You can also open `ScreenTextClip.xcodeproj` directly. Build outputs:
 
 ```text
 dist/Debug/ScreenTextClip.app
 dist/Release/ScreenTextClip.app
 ```
 
-## 测试
+## Tests
 
 ```bash
 xcodebuild test \
@@ -95,34 +95,34 @@ xcodebuild test \
   CODE_SIGN_IDENTITY=-
 ```
 
-轻量回归测试在运行时生成英文、简体中文、繁体中文、日文、韩文、混合语言、小字体、深色背景、不同字号、段落和双栏图像，不会把测试资源打包到 App。
+The lightweight regression suite generates English, Simplified Chinese, Traditional Chinese, Japanese, Korean, mixed-language, small-text, dark-background, varied-font-size, paragraph, and two-column fixtures at runtime. Test resources are not included in the app bundle.
 
-## 项目结构
+## Project Structure
 
 ```text
 ScreenTextClip/
-├── App/                  # App 生命周期、菜单栏、快捷键和主流程
-├── Overlay/              # 多显示器选区与翻译弹窗
-├── Services/             # 截图、OCR、翻译、剪贴板和权限
-├── Assets/               # App 图标
+├── App/                  # App lifecycle, menu bar, shortcut, and main flow
+├── Overlay/              # Multi-display selection overlays and translation popup
+├── Services/             # Capture, OCR, translation, clipboard, and permissions
+├── Assets/               # App icon
 └── Info.plist
-ScreenTextClipTests/       # OCR 与文本整理回归测试
-script/                    # 本地构建和启动脚本
+ScreenTextClipTests/       # OCR and text-organization regression tests
+script/                    # Local build and launch scripts
 ```
 
-## 隐私与设计边界
+## Privacy and Design Scope
 
-- 截图和 OCR 在本机执行。
-- 翻译使用 macOS 自带的 Apple Translation。
-- App 不保存截图、OCR 结果或翻译历史。
-- 不包含账号、云同步、截图标注、浏览器扩展或复杂排版恢复。
-- 可用语言受 Apple Vision 和 Apple Translation 支持范围限制。
-- 长篇、多语种混合文本的翻译质量取决于 Apple 语言模型。
+- Screenshots and OCR are processed locally.
+- Translation uses Apple Translation built into macOS.
+- The app does not save screenshots, OCR results, or translation history.
+- The app has no accounts, cloud sync, screenshot annotation, browser extension, or complex layout-recovery system.
+- Available languages are limited to those supported by Apple Vision and Apple Translation.
+- Translation quality for long or heavily mixed-language text depends on Apple's language models.
 
-## 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request。请保持项目的本地、极简、快速定位，不引入云服务、第三方 API 或不必要的依赖。
+Issues and pull requests are welcome. Please preserve the project's local-first, minimal, and fast design, and avoid cloud services, third-party APIs, or unnecessary dependencies.
 
-## 开源许可
+## License
 
-本项目使用 [MIT License](LICENSE)。
+This project is available under the [MIT License](LICENSE).
